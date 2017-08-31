@@ -1,0 +1,496 @@
+{
+	"variables": [],
+	"info": {
+		"name": "PostmanAPI",
+		"_postman_id": "af9d5d10-3651-937d-c50c-92b7e9556eec",
+		"description": "Token Based Authentication and Authorization Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Token For Login",
+			"description": "",
+			"item": [
+				{
+					"name": "http://apidevelopment-inclass01.azurewebsites.net/Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonObject = xml2Json(responseBody);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://apidevelopment-inclass01.azurewebsites.net/Token",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "AWS4-HMAC-SHA256 Credential=/20170830/us-east-1/execute-api/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature=ebd46589602911a160ff3077afbfd8ae943112678954cc0ea9bb20bf25dd32d8",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Host",
+								"value": "apidevelopment-inclass01.azurewebsites.net",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "X-Amz-Date",
+								"value": "20170830T190426Z",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "test@gmail.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Advmad@6010",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Token Success "
+					},
+					"response": []
+				},
+				{
+					"name": "http://apidevelopment-inclass01.azurewebsites.net/Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonObject = xml2Json(responseBody);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://apidevelopment-inclass01.azurewebsites.net/Token",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "AWS4-HMAC-SHA256 Credential=/20170830/us-east-1/execute-api/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature=ebd46589602911a160ff3077afbfd8ae943112678954cc0ea9bb20bf25dd32d8",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Host",
+								"value": "apidevelopment-inclass01.azurewebsites.net",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "X-Amz-Date",
+								"value": "20170830T190426Z",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "testing@gmail.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Advmad@6010",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Token Error - Invaid Username/Password"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Information",
+			"description": "",
+			"item": [
+				{
+					"name": "http://apidevelopment-inclass01.azurewebsites.net/api/Account/UserInfo",
+					"request": {
+						"url": "http://apidevelopment-inclass01.azurewebsites.net/api/Account/UserInfo",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer IPFEyHCpbSyUpBLblMhkN6gf0pGvvF2AlLR5jarp0z0rLy1yLK-MmSCp2HeZOgOqPrl45sLdyljZJfaoT5zR0UXxPBbUyytFwzLX-rSx6IXxiu4lBaByq76JBL_td3w3EQ-0ixN5PS-wGYxQZQvRk9lLz7dgV_hl1l1AJ1Q241gHCDFP-1GW_BauBt3OEQ_-v7MeE3_ZF_hiQIJnwlvfDHvQhmWIrNonBx8mAznJLSEb_xKjBZlro9mSE68E1_IAPbRmZzfkEnyJ9EJy5cZzaMvCu7cE_yEcU-F2-zlosF6QiWg153zNJjBMk0sksYkmNuFgZcgOVRYSXLjvGwIl6QfMb7zJhwi9uL61CBdGS46t6mIcyJLf7yrGGkf9tUDM0521LP_iq_aJkQlG0yl_EYZZm0twCNRNKmHc7ntfgh_9TTHRS-VTp0msinEdVq1lQ_GB4dGda56j4r8GDU3-3sBYCpqGEl2d_DM7zEPSpCE",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "UserInfo Success"
+					},
+					"response": []
+				},
+				{
+					"name": "http://apidevelopment-inclass01.azurewebsites.net/api/Account/UserInfo",
+					"request": {
+						"url": "http://apidevelopment-inclass01.azurewebsites.net/api/Account/UserInfo",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "UserInfo without token - Access Denied"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update Information",
+			"description": "",
+			"item": [
+				{
+					"name": "http://apidevelopment-inclass01.azurewebsites.net/api/Account/UpdateProfile",
+					"request": {
+						"url": "http://apidevelopment-inclass01.azurewebsites.net/api/Account/UpdateProfile",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer qxCxY6xTh5NEb_kzI31sQq0xgR7_FNEZyqWWXw6pIv34PeyFlcVJ9G5R8KbTYvSnVFfNtSLqZt_Kf0pCanm-kVeq2OzhrKLIeCdUbyQ8OepiVV-OCp7P0pJ3vDV5FaushzL7vS7PGRX_HKdQKfqlXqA3CRKtbGEqVhHAQd7ygCke00_mQbNQUg-qRxxQFbMzvxE3fkz0diyq_OAw-srA8rsmJLCRlY_v2eUeLJdKo6VWVWbD1_Y69ijRGNFyxjEozXI2tEIpNDftM5N7dxgTh_eQucIcrnrKmUZJMcSDWREvSOa66i00QHeDjEQkTMlHrdkSrJ-BKsqrmBC5BLZn8AOwupaR1SZKVYKKMgemQgoFseSMgNl00IRldErYTHH47Fm__FhJ61kUX3-sqOk1E9BghBnv2dRnB4PUHMfvTQaHcT5khQWBRTu_pr83xOyGq0Ipx2MuHMbDJz6XktnmeWARN-VAoaC4meFPETJ_mK9jkTpdkWAgnfTp1o8Wmip5",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Name",
+									"value": "Test Update Name",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Age",
+									"value": "25.0",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Weight",
+									"value": "60.0",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Address",
+									"value": "NY",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Email",
+									"value": "yes@gmail.com",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "User Update profile Sucess"
+					},
+					"response": []
+				},
+				{
+					"name": "http://apidevelopment-inclass01.azurewebsites.net/api/Account/UpdateProfile",
+					"request": {
+						"url": "http://apidevelopment-inclass01.azurewebsites.net/api/Account/UpdateProfile",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer ",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Name",
+									"value": "Test Update Name",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Age",
+									"value": "25.0",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Weight",
+									"value": "60.0",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Address",
+									"value": "NY",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Email",
+									"value": "yes@gmail.com",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "User Update profile without Token"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register User",
+			"description": "",
+			"item": [
+				{
+					"name": "http://apidevelopment-inclass01.azurewebsites.net/api/Account/Register",
+					"request": {
+						"url": "http://apidevelopment-inclass01.azurewebsites.net/api/Account/Register",
+						"method": "POST",
+						"header": [
+							{
+								"key": "userName",
+								"value": "Nitin",
+								"description": ""
+							},
+							{
+								"key": "password",
+								"value": "123",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Name",
+									"value": "New User2",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Age",
+									"value": "20",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Weight",
+									"value": "60",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Address",
+									"value": "Atlanta",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Password",
+									"value": "abc",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Email",
+									"value": "user@gmail.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "ConfirmPassword",
+									"value": "abc@123",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "User Rregister Failure"
+					},
+					"response": []
+				},
+				{
+					"name": "http://apidevelopment-inclass01.azurewebsites.net/api/Account/Register",
+					"request": {
+						"url": "http://apidevelopment-inclass01.azurewebsites.net/api/Account/Register",
+						"method": "POST",
+						"header": [
+							{
+								"key": "userName",
+								"value": "Nitin",
+								"description": ""
+							},
+							{
+								"key": "password",
+								"value": "123",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Name",
+									"value": "New User2",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Age",
+									"value": "20",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Weight",
+									"value": "60",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Address",
+									"value": "Atlanta",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Password",
+									"value": "abc@123",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Email",
+									"value": "newuser@gmail.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "ConfirmPassword",
+									"value": "abc@123",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "User Registeration Success"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Logout",
+			"description": "",
+			"item": [
+				{
+					"name": "http://apidevelopment-inclass01.azurewebsites.net/api/Account/Logout",
+					"request": {
+						"url": "http://apidevelopment-inclass01.azurewebsites.net/api/Account/Logout",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer WYX7_56ZkO9WfCCgvqXv_Z7T4a4cIq1lZX-jzSQ14kCnwT6JF0mFNMXIdd0UEB8E7mzMs3RFh1FXYTfg_vwQUNyiQf2_zDQHIRjHJJSPctBptRAMYmMFxKjguL4pVzBYvSdclEBjrTfo-2MtB1sMcDNIs6ND7yl7QAWX2BDVxQtsiSye0ya0ZkLcJpylhQuU706vCZism_qz7BFP3rvnwwOEbuaTj_UfMs5i5KsLV16Zx7NBrEFjZEHHgvudsH3X7DDb-6sgxAolCFPxC2Ag7VJdjVLderUlrTwQIEg1gaQvHL38U8FbHZxCcM-pXlbHj00G6JjGwGJg8UlvNjQlKwh-DrDc1dgiwIeG9y7fY4r9Yr0mHMXAx1LGwWJZ8OcL4v7ih_hUP0Q3AoaT-qQx9TGBegX4KEl2Pc9YTjLulCtVRZyT5CJwnWtiGJhU5fT_hruYRRA_Sssy0vU86nshCZAktAy5-MGf5lh_pRTyascxb7NtewhqzET3lVSZpsq0",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
