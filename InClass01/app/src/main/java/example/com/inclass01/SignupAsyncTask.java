@@ -1,6 +1,7 @@
 package example.com.inclass01;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -18,7 +19,7 @@ import java.util.HashMap;
 public class SignupAsyncTask extends AsyncTask<String,Void,String> {
 
     HashMap<String,String> parameters;
-
+    String message;
     IGetMessage iGetMessage;
 
     public interface IGetMessage{
@@ -32,7 +33,8 @@ public class SignupAsyncTask extends AsyncTask<String,Void,String> {
 
     @Override
     protected String doInBackground(String... params) {
-        HttpURLConnection con = null;
+        HttpURLConnection con ;//= null;
+        message = "";
         try {
             URL url = new URL(params[0]);
 
@@ -46,18 +48,24 @@ public class SignupAsyncTask extends AsyncTask<String,Void,String> {
                 OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
                 writer.write(getEncodedParams());
                 writer.flush();
+            con.connect();
+            //Log.d("response",con.getResponseMessage() + con.getResponseCode());
+            if(con.getResponseCode() == 200) {
+
+                message = "Account created succesfully";
+                Log.d("messageAsync",message);
+            }else
+            {
+                message = "Please enter proper input";
+            }
+
+
             } catch (ProtocolException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        try {
-            if(con.getResponseCode() == 200)
-            return "Account created succesfully";
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return "Account could not be created";
+        return message;
     }
 
     public String getEncodedParams(){
