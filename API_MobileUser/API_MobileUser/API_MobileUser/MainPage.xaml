@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:API_MobileUser"
+             x:Class="API_MobileUser.MainPage"
+             Padding="10"
+             Title="InClass-01-Demo">
+
+    <Grid x:Name="container" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Entry x:Name="UserName" Placeholder="User name" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand"/>
+        <Entry x:Name="Password" Placeholder="Password" IsPassword="True" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand"/>
+        <Button x:Name="Login" Text="Login" Grid.Row="2" Grid.Column="0" Clicked="Login_Clicked" HorizontalOptions="CenterAndExpand"/>
+        <Button x:Name="SignUp" Text="Sign Up" Grid.Row="2" Grid.Column="1" Clicked="SignUp_Clicked" HorizontalOptions="CenterAndExpand"/>
+    
+    </Grid>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Exit" Text="" Clicked="Exit_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+</ContentPage>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="API_MobileUser.UserProfilePage"
+             Padding="10"
+             Title="Welcome">
+
+    <Grid x:Name="container" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Text="Name" FontSize="Medium" Grid.Row="1" Grid.Column="0"/>
+        <Label Text="Age" FontSize="Medium" Grid.Row="2" Grid.Column="0"/>
+        <Label Text="Weight" FontSize="Medium" Grid.Row="3" Grid.Column="0"/>
+        <Label Text="Address" FontSize="Medium" Grid.Row="4" Grid.Column="0"/>
+        <Label Text="Email" FontSize="Medium" Grid.Row="0" Grid.Column="0"/>
+        
+        <Label x:Name="Name"  Text="Name" FontSize="Medium" Grid.Row="1" Grid.Column="1"/>
+        <Label x:Name="Age" Text="Age" FontSize="Medium" Grid.Row="2" Grid.Column="1"/>
+        <Label x:Name="Weight" Text="Weight" FontSize="Medium" Grid.Row="3" Grid.Column="1"/>
+        <Label x:Name="Address" Text="Address" FontSize="Medium" Grid.Row="4" Grid.Column="1"/>
+        <Label x:Name="Email" Text="Email" FontSize="Medium" Grid.Row="0" Grid.Column="1"/>   
+
+    </Grid>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:name="Edit" Clicked="Edit_Clicked" Text="Edit" />
+        <ToolbarItem x:name="Logout" Clicked="Logout_Clicked" Text="Logout"/>
+    </ContentPage.ToolbarItems>
+
+    
+</ContentPage>

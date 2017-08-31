@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="API_MobileUser.RegisterPage"
+             Padding="10"
+             Title="Regiter">
+
+    <StackLayout x:Name="container" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+        
+        <Label Text="Enter Information" FontSize="Large" HorizontalTextAlignment="Center"/>
+        
+        <Entry x:Name="Name" Placeholder="Name" HorizontalTextAlignment="Center"/>
+        <Entry x:Name="Age" Placeholder="Age" HorizontalTextAlignment="Center" Keyboard="Numeric"/>
+        <Entry x:Name="Weight" Placeholder="Weight" HorizontalTextAlignment="Center" Keyboard="Numeric"/>
+        <Entry x:Name="Address" Placeholder="Address" HorizontalTextAlignment="Center"/>
+        <Entry x:Name="Email" Placeholder="Email" HorizontalTextAlignment="Center" Keyboard="Email"/>
+        <Entry x:Name="Password" Placeholder="Password" IsPassword="True" HorizontalTextAlignment="Center"/>
+        <Entry x:Name="ConfirmPassword" Placeholder="Confirm Password" IsPassword="True" HorizontalTextAlignment="Center"/>
+        
+        <Button x:Name="Create" Text="Create Account" Clicked="Register_Clicked" />
+        
+    </StackLayout>
+</ContentPage>

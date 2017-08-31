@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="API_MobileUser.EditProfilePage"
+             Padding="10"
+             Title="Edit Profile">
+
+    <ScrollView>
+        <Grid x:Name="container" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Text="Name"  Grid.Row="1" Grid.Column="0"/>
+            <Label Text="Age"  Grid.Row="2" Grid.Column="0"/>
+            <Label Text="Weight"  Grid.Row="3" Grid.Column="0"/>
+            <Label Text="Address"  Grid.Row="4" Grid.Column="0"/>
+            <Label Text="Email"  Grid.Row="0" Grid.Column="0"/>
+
+            <Entry x:Name="Name"  Text="Name"  Grid.Row="1" Grid.Column="1" />
+            <Entry x:Name="Age" Text="Age"  Grid.Row="2" Grid.Column="1" Keyboard="Numeric"/>
+            <Entry x:Name="Weight" Text="Weight"  Grid.Row="3" Grid.Column="1" Keyboard="Numeric"/>
+            <Entry x:Name="Address" Text="Address" Grid.Row="4" Grid.Column="1"/>
+            <Label x:Name="Email" Text="Email"  Grid.Row="0" Grid.Column="1"/>
+
+            <Button x:Name="Save" Text="Save Changes" Clicked="Save_Clicked" Grid.Row="5" Grid.ColumnSpan="2"/>
+
+            <Entry x:Name="OldPassword" Placeholder="Old Password"  Grid.Row="6" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" IsPassword="True"/>
+            <Entry x:Name="NewPassword" Placeholder="New Password"  Grid.Row="7" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" IsPassword="True" />
+            <Entry x:Name="ConfirmNewPassword" Placeholder="Confirm Password"  Grid.Row="8" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" IsPassword="True"/>
+
+            <Button x:Name="ChangePassword" Text="Change Password" Clicked="ChangePassword_Clicked" Grid.Row="9" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand"/>
+
+
+        </Grid>
+    </ScrollView>
+
+    
+</ContentPage>
