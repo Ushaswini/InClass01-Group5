@@ -2,6 +2,7 @@ package example.com.inclass01;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,13 +41,13 @@ public class SignUpActivity extends AppCompatActivity {
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(validateInput().length() == 0 || validateInput().equals("")){
+               /* if(validateInput().length() == 0 || validateInput().equals("")){
                     Toast.makeText(SignUpActivity.this,validateInput(),Toast.LENGTH_SHORT);
                 }else if(!matchPasswords(pwd.getText().toString(),confirmPwd.getText().toString())){
                     Toast.makeText(SignUpActivity.this,"Passwords do not match",Toast.LENGTH_SHORT);
                 }else if(validateInput().length() == 0 || validateInput().equals("")){
                     Toast.makeText(SignUpActivity.this,validateInput(),Toast.LENGTH_SHORT);
-                }else{
+                }else{*/
 
                     userParams.put("Name",name.getText().toString());
                     userParams.put("Age",age.getText().toString());
@@ -60,10 +61,13 @@ public class SignUpActivity extends AppCompatActivity {
                         @Override
                         public void getSignUpMessage(String message) {
                             Toast.makeText(SignUpActivity.this,message,Toast.LENGTH_SHORT).show();
-                            //finish();
+                            if(message.equals("Account created succesfully")) {
+                            Log.d("message",message);
+                                finish();
+                            }
                         }
                     },userParams).execute("http://apidevelopment-inclass01.azurewebsites.net/api/Account/Register");
-                }
+                //}
             }
         });
 
